@@ -3,321 +3,475 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajay Singh Ji - Sr. SEO Executive</title>
+    <title>Ajay Singh - Sr. SEO Executive</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <style>
-        /* --- General Body Styles --- */
+        :root {
+            --bg-color: #121212;
+            --card-color: #1e1e1e;
+            --primary-text-color: #f0f0f0;
+            --secondary-text-color: #a0a0a0;
+            --accent-color: #00bfa5;
+            --accent-color-dark: #008c7a;
+            --shadow-color: rgba(0,0,0,0.5);
+            --gradient-accent: linear-gradient(45deg, var(--accent-color), #00d1b2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle, #2a2a2a 1px, transparent 1px);
+            background-size: 2rem 2rem;
+            color: var(--primary-text-color);
+            line-height: 1.7;
         }
 
-        /* --- Main Container --- */
         .container {
-            max-width: 900px;
-            margin: 30px auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
         }
 
-        /* --- Header Section --- */
-        .header {
+        /* --- Header / Hero Section --- */
+        .hero {
             text-align: center;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 20px;
-            margin-bottom: 30px;
+            padding: 4rem 0 2rem 0; /* Adjusted padding */
+            border-bottom: 1px solid #333;
         }
-        .header h1 {
-            margin: 0;
-            font-size: 2.5em;
-            color: #2c3e50;
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid var(--accent-color);
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 30px rgba(0, 191, 165, 0.5);
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
         }
-        .header .job-title {
-            margin: 5px 0;
-            font-size: 1.2em;
-            color: #3498db;
-            font-weight: 500;
+        .profile-image:hover {
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 0 45px rgba(0, 191, 165, 0.7);
         }
-        .contact-info {
-            list-style: none;
-            padding: 0;
-            margin: 15px 0 0 0;
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        .hero .job-title {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem; /* Adjusted margin */
+            text-shadow: 0 0 10px rgba(0, 191, 165, 0.5);
+        }
+        
+        /* --- Hero Action Buttons --- */
+        .hero-actions {
+            margin-top: 1.5rem;
+            margin-bottom: 2rem; /* Adjusted margin */
             display: flex;
             justify-content: center;
+            gap: 1rem;
             flex-wrap: wrap;
-            gap: 20px;
         }
-        .contact-info li {
-            font-size: 0.9em;
-            color: #555;
-        }
-        .contact-info a {
-            color: #3498db;
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
             text-decoration: none;
-            transition: color 0.3s;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
         }
-        .contact-info a:hover {
-            color: #2980b9;
+        .btn-primary {
+            background: var(--gradient-accent);
+            color: #111;
+        }
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 191, 165, 0.3);
+            color: #000;
+        }
+        .btn-secondary {
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        .btn-secondary:hover {
+            background-color: var(--accent-color);
+            color: #111;
+            transform: translateY(-5px);
+        }
+        
+        .contact-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .contact-links a {
+            color: var(--secondary-text-color);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+        .contact-links a:hover {
+            color: var(--accent-color);
+        }
+        .contact-links i {
+            margin-right: 0.5rem;
+        }
+        
+        /* --- Main Layout --- */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .content-left, .content-right {
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
         }
 
-        /* --- Section Styling --- */
+        /* --- General Section Styling --- */
         .section {
-            margin-bottom: 30px;
-        }
-        .section h2 {
-            font-size: 1.6em;
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+            background: var(--card-color);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid #2f2f2f;
+            box-shadow: 0 8px 16px var(--shadow-color);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
         
-        /* --- Two-Column Layout --- */
-        .main-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
+        .section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
-        /* --- Work Experience --- */
-        .experience-item {
-            margin-bottom: 20px;
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
         }
-        .experience-item h3 {
-            margin: 0;
-            font-size: 1.2em;
-            color: #333;
+        
+        /* --- Cards for Experience --- */
+        .card {
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .experience-item .company {
-            font-weight: bold;
-            color: #555;
+        .card:last-child { margin-bottom: 0; }
+        .card h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-text-color);
         }
-        .experience-item .date {
+        .card .date {
+            font-size: 0.9rem;
+            color: var(--secondary-text-color);
+            margin-bottom: 0.75rem;
             font-style: italic;
-            color: #777;
-            font-size: 0.9em;
         }
-        .experience-item p, .experience-item ul {
-            margin-top: 10px;
+        .card p, .card ul {
+            color: var(--secondary-text-color);
+            font-size: 1rem;
+        }
+        .card ul {
+            list-style-position: outside;
+            padding-left: 1.5rem;
+        }
+        .card ul li { margin-bottom: 0.5rem; }
+        .card ul li::marker { color: var(--accent-color); }
+
+        .btn-discuss {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.4rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent-color);
+            text-decoration: none;
+            border: 1px solid var(--accent-color);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        .btn-discuss:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
         }
 
-        /* --- Professional Experience (Projects) --- */
-         .project-item {
-            margin-bottom: 20px;
+        /* --- Skills Section --- */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
         }
-        .project-item h3 {
-            margin-bottom: 5px;
-            font-size: 1.2em;
+        .skill-tag {
+            background: #2c2c2c;
+            color: var(--primary-text-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border: 1px solid #444;
+            transition: all 0.3s ease;
         }
-        .project-item ul {
-            list-style-type: disc;
-            margin-left: 20px;
-            padding-left: 0;
+        .skill-tag:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+            border-color: var(--accent-color);
         }
         
-        /* --- Skills / Expertise Section --- */
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 15px;
+        /* --- Call to Action Sections --- */
+        .services-cta, #contact {
+            text-align: center;
+            margin-bottom: 2.5rem;
         }
-        .expertise-category {
-            margin-bottom: 20px;
+        .services-cta:last-child, #contact:last-of-type {
+            margin-bottom: 0;
         }
-        .expertise-category h3 {
-            margin: 0 0 10px 0;
-            font-size: 1.1em;
-            color: #333;
+        .services-cta p, #contact p {
+            max-width: 600px;
+            margin: 0 auto 1.5rem auto;
+            color: var(--secondary-text-color);
         }
-        .expertise-category ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .expertise-category ul li {
-            background-color: #ecf0f1;
-            padding: 8px 12px;
-            border-radius: 4px;
-            margin-bottom: 8px;
-            font-size: 0.95em;
-            color: #34495e;
+        .services-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
 
         /* --- Responsive Design --- */
+        @media (min-width: 992px) {
+            .main-layout {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+        
         @media (max-width: 768px) {
-            .main-content {
-                grid-template-columns: 1fr;
-            }
-            .contact-info {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            .hero .job-title { font-size: 1.2rem; }
+            .container { padding: 1.5rem; }
+            .section { padding: 1.5rem; }
+            .hero-actions { flex-direction: column; align-items: center; }
+            .services-buttons { flex-direction: column; align-items: center; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <header class="header">
+        <header class="hero">
+            <img src="/../ajay.png" 
+                 onerror="this.onerror=null;this.src='https://placehold.co/180x180/00bfa5/ffffff?text=AS';"
+                 alt="Ajay Singh" class="profile-image">
             <h1>Ajay Singh</h1>
-            <p class="job-title">Sr. SEO Executive</p>
-            <ul class="contact-info">
-                <li><a href="tel:+918723933592">(+91) 8723-933-592</a></li>
-                <li><a href="mailto:info@ajaysingh.co.in">info@ajaysingh.co.in</a></li>
-                <li>Jaipur, Rajasthan</li>
-                <li><a href="https://linkedin.com/in/ajay-singh-seo/" target="_blank">linkedin.com/in/ajay-singh-seo</a></li>
-            </ul>
+            <p class="job-title">Senior SEO Executive | AI & Automation Specialist</p>
+            
+            <div class="hero-actions">
+                <a href="path-to-your-cv.pdf" class="btn btn-primary" download><i class="fas fa-download"></i> Download CV</a>
+                <a href="#contact" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Contact Me</a>
+            </div>
+
+            <div class="contact-links">
+                <a href="tel:+918723933592"><i class="fas fa-phone"></i> (+91) 8723-933-592</a>
+                <a href="mailto:info@ajaysingh.co.in"><i class="fas fa-envelope"></i> info@ajaysingh.co.in</a>
+                <a href="https://linkedin.com/in/ajay-singh-seo/" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/ajay-singh-seo</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Jaipur, Rajasthan</a>
+            </div>
         </header>
 
-        <section class="section">
-            <h2>Summary</h2>
-            <p>Highly motivated SEO Specialist with over eight years of industry experience, I possess a deep understanding of both on-page and off-page SEO strategies. My career is marked by a proven track record of delivering measurable results, complemented by strong problem-solving abilities and analytical thinking skills.</p>
-        </section>
-        
-        <div class="main-content">
-            <div class="left-column">
-                <section class="section">
-                    <h2>Work Experience</h2>
-                    <div class="experience-item">
-                        <h3>Sr. SEO Executive</h3>
-                        <p class="company">ITXITPro</p>
-                        <p class="date">January 2025 - Present</p>
-                        <p>Serving as Senior SEO Executive, leading all priority (P1) projects overseeing end-to-end strategy, on-page optimization, and execution to drive measurable business results.</p>
+        <main class="main-layout">
+            
+            <div class="content-left">
+                <section class="section about-me">
+                    <h3 class="section-title"><i class="fas fa-user-circle"></i>About Me</h3>
+                    <p>Highly motivated SEO Specialist with over eight years of industry experience. I possess a deep understanding of both on-page and off-page SEO strategies. My career is marked by a proven track record of delivering measurable results, complemented by strong problem-solving abilities and analytical thinking skills.</p>
+                </section>
+                
+                <section class="section work-experience">
+                    <h3 class="section-title"><i class="fas fa-briefcase"></i>Work Experience</h3>
+                    <div class="card">
+                        <h4>Sr. SEO Executive at ITXITPro</h4>
+                        <p class="date">October 2025 - Present</p>
+                        <p>Leading all priority (P1) projects, overseeing end-to-end strategy, on-page optimization, and execution to drive measurable business results.</p>
                     </div>
-                    <div class="experience-item">
-                        <h3>SEO Executive</h3>
-                        <p class="company">Indeses Business Ventures Pvt. Ltd.</p>
-                        <p class="date">August 2021 - December 2024</p>
+                    <div class="card">
+                        <h4>SEO Executive at Indeses Business Ventures Pvt. Ltd.</h4>
+                        <p class="date">August 2021 - September 2025</p>
                     </div>
-                    <div class="experience-item">
-                        <h3>SEO Executive</h3>
-                        <p class="company">Quvox marketing | Web Design Singapore</p>
+                    <div class="card">
+                        <h4>SEO Executive at Quvox marketing | Web Design Singapore</h4>
                         <p class="date">October 2018 - June 2020</p>
                     </div>
-                     <div class="experience-item">
-                        <h3>SEO Executive</h3>
-                        <p class="company">Galbatross Technologies</p>
+                    <div class="card">
+                        <h4>SEO Executive at Galbatross Technologies</h4>
                         <p class="date">March 2015 - July 2017</p>
                     </div>
                 </section>
                 
-                <section class="section">
-                    <h2>Professional Experience & Projects</h2>
-                     <div class="project-item">
-                        <h3>BigBang</h3>
-                        <ul>
-                            <li>Achieved AI Overview rankings, significantly increasing quality leads for the project.</li>
-                        </ul>
+                <section class="section professional-experience">
+                    <h3 class="section-title"><i class="fas fa-rocket"></i>Key Projects & Achievements</h3>
+                     <div class="card">
+                        <h4>Leading SaaS Platform</h4>
+                        <p>Achieved AI Overview rankings, significantly increasing quality leads for the project.</p>
+                        <a href="#contact" class="btn-discuss"><i class="fas fa-comments"></i> Discuss this Achievement</a>
                     </div>
-                    <div class="project-item">
-                        <h3>Fieldturf Landscape</h3>
+                    <div class="card">
+                        <h4>National Landscaping E-commerce Site</h4>
                         <ul>
                             <li>Successfully recovered organic traffic following a major website redesign and full migration.</li>
-                            <li>Ranked in AI Overview by optimizing FAQs (AEO), creating an opportunity for the company to upgrade their SEO package.</li>
+                            <li>Ranked in AI Overview by optimizing FAQs (AEO), creating an opportunity to upgrade their SEO package.</li>
                         </ul>
+                         <a href="#contact" class="btn-discuss"><i class="fas fa-comments"></i> Discuss this Achievement</a>
                     </div>
-                     <div class="project-item">
-                        <h3>Mabel</h3>
+                    <div class="card">
+                        <h4>Rapid-Launch Templated Website</h4>
                         <ul>
+                            <li>Executed an idea for a template-based site, scraping and structuring the entire database in a single day.</li>
+                            <li>Developed and launched the full 8,000+ page website on day two, demonstrating rapid execution capabilities.</li>
+                            <li>Successfully grew the site to over 100 daily visitors within its first month of operation.</li>
+                        </ul>
+                         <a href="#contact" class="btn-discuss"><i class="fas fa-comments"></i> Discuss this Achievement</a>
+                    </div>
+                    <div class="card">
+                        <h4>Mabel</h4>
+                         <ul>
                             <li>Recovered a hacked website, restoring over 6,000 salon listings and implementing comprehensive security measures.</li>
                             <li>Achieved a significant uptrend in organic rankings and secured AI Overview rankings.</li>
-                        </ul>
-                    </div>
-                     <div class="project-item">
-                        <h3>AmerQuickPlus</h3>
-                        <ul>
-                            <li>Developed a content plan that grew organic traffic from zero to 1,000 visitors per day.</li>
-                             <li>Delivered a consistent stream of high-quality leads for the client.</li>
-                        </ul>
-                    </div>
-                     <div class="project-item">
-                        <h3>AI Automation Tools</h3>
-                        <ul>
-                            <li>Built an AI content generation tool using n8n and the Gemini API, automating content production.</li>
-                            <li>Developed an AI email scraping agent to streamline the outreach process.</li>
-                            <li>Engineered an autonomous email outreach agent to send messages at set intervals.</li>
-                        </ul>
-                    </div>
-                     <div class="project-item">
-                        <h3>Backlink Indexer</h3>
-                        <ul>
-                            <li>Developed a backlink indexer tool from the ground up to solve the issue of unindexed backlinks.</li>
-                        </ul>
+                         </ul>
                     </div>
                 </section>
 
+                <section class="section ai-automation">
+                    <h3 class="section-title"><i class="fas fa-brain"></i>AI Automation & Innovation</h3>
+                    <div class="card">
+                        <h4>AI Content Generation Tool</h4>
+                        <p>Built a custom tool leveraging n8n and the Gemini API to fully automate high-quality content production, streamlining the content pipeline.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Autonomous Outreach Agents</h4>
+                        <p>Developed and engineered intelligent AI agents for automated email scraping and personalized outreach, significantly increasing lead generation efficiency.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Custom Backlink Indexer</h4>
+                        <p>Created a proprietary tool to solve the critical issue of unindexed backlinks, ensuring maximum value from off-page SEO efforts.</p>
+                    </div>
+                </section>
             </div>
+            
+            <div class="content-right">
+                <section class="section skills">
+                    <h3 class="section-title"><i class="fas fa-cogs"></i>Core Expertise</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag">On-Page SEO</span>
+                        <span class="skill-tag">Off-Page SEO</span>
+                        <span class="skill-tag">Technical SEO</span>
+                        <span class="skill-tag">AIO (AI Optimization)</span>
+                        <span class="skill-tag">AEO (Answer Engine Opt.)</span>
+                        <span class="skill-tag">Website Migration</span>
+                        <span class="skill-tag">Server Management</span>
+                        <span class="skill-tag">AI Agent Development</span>
+                        <span class="skill-tag">Content Strategy</span>
+                    </div>
+                </section>
+                
+                <section class="section tools">
+                    <h3 class="section-title"><i class="fas fa-tools"></i>Tools & Platforms</h3>
+                     <div class="skills-grid">
+                        <span class="skill-tag">Ahrefs</span>
+                        <span class="skill-tag">Semrush</span>
+                        <span class="skill-tag">Screaming Frog</span>
+                        <span class="skill-tag">Agency Analytics</span>
+                        <span class="skill-tag">Link Chest</span>
+                        <span class="skill-tag">WordPress</span>
+                        <span class="skill-tag">Shopify</span>
+                        <span class="skill-tag">Wix</span>
+                        <span class="skill-tag">Joomla</span>
+                    </div>
+                </section>
 
-            <div class="right-column">
-                <section class="section">
-                    <h2>Areas of Expertise</h2>
-                    <div class="expertise-category">
-                        <h3>SEO Optimization</h3>
-                        <ul>
-                            <li>On-Page & AIO</li>
-                            <li>Off-Page (Guest Posts, Contextual Links)</li>
-                            <li>Technical SEO</li>
-                            <li>Indexing & AEO</li>
-                        </ul>
-                    </div>
-                     <div class="expertise-category">
-                        <h3>Server Management</h3>
-                        <ul>
-                            <li>Website Migration</li>
-                            <li>Script Installation</li>
-                            <li>MySQL DB</li>
-                        </ul>
-                    </div>
-                     <div class="expertise-category">
-                        <h3>Web Development</h3>
-                        <ul>
-                            <li>WordPress</li>
-                            <li>Joomla</li>
-                            <li>Shopify & Wix</li>
-                        </ul>
-                    </div>
-                     <div class="expertise-category">
-                        <h3>AI Agents</h3>
-                        <ul>
-                            <li>Email Scraper Agent</li>
-                            <li>LinkedIn Outreach Agent</li>
-                            <li>Content Generation Agent</li>
-                            <li>Backlink Indexing Agent</li>
-                        </ul>
-                    </div>
-                </section>
-                
-                <section class="section">
-                    <h2>Tools</h2>
-                    <div class="expertise-category">
-                        <ul>
-                            <li>Ahrefs</li>
-                            <li>Semrush</li>
-                            <li>Screaming Frog</li>
-                            <li>Agency Analytics</li>
-                            <li>Link Chest</li>
-                        </ul>
-                    </div>
-                </section>
-                
-                <section class="section">
-                    <h2>Education</h2>
-                     <div class="experience-item">
-                        <h3>Animation And Multimedia Technology</h3>
-                        <p class="company">Central Institute of Technology, Kok</p>
-                        <p>Drop-Out</p>
+                <section class="section education">
+                    <h3 class="section-title"><i class="fas fa-graduation-cap"></i>Education</h3>
+                    <div class="card">
+                        <h4>Animation And Multimedia Technology</h4>
+                        <p class="date">Central Institute of Technology, Kok (Drop-Out)</p>
                     </div>
                 </section>
             </div>
-        </div>
+        </main>
+
+        <section class="section services-cta">
+            <h3 class="section-title"><i class="fas fa-handshake"></i>Let's Work Together</h3>
+            <p>Interested in leveraging my skills for your next project? Let's talk about how I can help you achieve your goals.</p>
+            <div class="services-buttons">
+                <a href="mailto:info@ajaysingh.co.in?subject=Inquiry%20for%20SEO%20Audit" class="btn btn-secondary"><i class="fas fa-search"></i> Contact for SEO Audit</a>
+                <a href="mailto:info@ajaysingh.co.in?subject=Inquiry%20for%20AI%20Automation" class="btn btn-secondary"><i class="fas fa-robot"></i> Contact For AI Automation</a>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h3 class="section-title"><i class="fas fa-envelope-open-text"></i>Get In Touch</h3>
+            <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of an ambitious team. Feel free to reach out.</p>
+            <a href="mailto:info@ajaysingh.co.in" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Email Me</a>
+        </section>
+
     </div>
 
-</body>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section');
 
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
 </html>
+
