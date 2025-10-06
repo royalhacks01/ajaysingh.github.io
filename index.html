@@ -214,22 +214,17 @@
         }
         .card ul li { margin-bottom: 0.5rem; }
         .card ul li::marker { color: var(--accent-color); }
-
-        .btn-discuss {
+        
+        .country-tag {
             display: inline-block;
-            margin-top: 1rem;
-            padding: 0.4rem 1rem;
-            font-size: 0.9rem;
+            background-color: #333;
+            color: var(--secondary-text-color);
+            font-size: 0.8rem;
             font-weight: 500;
-            color: var(--accent-color);
-            text-decoration: none;
-            border: 1px solid var(--accent-color);
-            border-radius: 20px;
-            transition: all 0.3s ease;
-        }
-        .btn-discuss:hover {
-            background-color: var(--accent-color);
-            color: var(--bg-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 12px;
+            margin-left: 0.75rem;
+            vertical-align: middle;
         }
 
         /* --- Skills Section --- */
@@ -291,6 +286,106 @@
             .hero-actions { flex-direction: column; align-items: center; }
             .services-buttons { flex-direction: column; align-items: center; }
         }
+        /* --- Card Actions / Buttons --- */
+        .card-actions {
+            margin-top: 1.25rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .btn-discuss {
+            display: inline-block;
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-discuss:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 191, 165, 0.3);
+        }
+
+        .btn-discuss i {
+            margin-right: 0.5rem;
+        }
+
+        .btn-screenshot {
+            border-color: #555;
+            color: #bbb;
+        }
+
+        .btn-screenshot:hover {
+            background-color: #555;
+            color: var(--primary-text-color);
+            box-shadow: 0 4px 10px rgba(85, 85, 85, 0.3);
+        }
+
+        /* --- Image Modal Styles --- */
+        .modal-overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 85vw;
+            max-height: 85vh;
+            animation: zoomIn 0.4s ease-out;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close-modal:hover,
+        .close-modal:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -299,13 +394,14 @@
         <header class="hero">
             <img src="/../ajay.png" 
                  onerror="this.onerror=null;this.src='https://placehold.co/180x180/00bfa5/ffffff?text=AS';"
-                 alt="Ajay Singh" class="profile-image">
+                 alt="Profile photo of Ajay Singh, SEO Specialist" class="profile-image">
             <h1>Ajay Singh</h1>
             <p class="job-title">Senior SEO Executive | AI & Automation Specialist</p>
+            <p class="tagline">I leverage AI-driven strategies and advanced SEO to triple organic growth and build automated systems that drive results.</p>
             
             <div class="hero-actions">
-                <a href="Ajay-Singh.pdf" class="btn btn-primary" download><i class="fas fa-download"></i> Download CV</a>
-                <a href="#contact" class="btn btn-secondary"><i class="fas fa-paper-plane"></i> Contact Me</a>
+                <a href="#contact" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book a Free Strategy Call</a>
+                <a href="Ajay-Singh.pdf" class="btn btn-secondary" download><i class="fas fa-download"></i> Download CV</a>
             </div>
 
             <div class="contact-links">
@@ -329,7 +425,7 @@
                     <div class="card">
                         <h4>Sr. SEO Executive at ITXITPro</h4>
                         <p class="date">October 2025 - Present</p>
-                        <p>Leading priority (P1) projects, overseeing end-to-end strategy, on-page optimization, and execution to drive measurable business results.</p>
+                        <p>Leading all priority (P1) projects, overseeing end-to-end strategy, on-page optimization, and execution to drive measurable business results.</p>
                     </div>
                     <div class="card">
                         <h4>SEO Executive at Indeses Business Ventures Pvt. Ltd.</h4>
@@ -346,35 +442,51 @@
                 </section>
                 
                 <section class="section professional-experience">
-                    <h3 class="section-title"><i class="fas fa-rocket"></i>Key Projects & Achievements</h3>
-                     <div class="card">
-                        <h4>Leading SaaS Platform</h4>
-                        <p>Achieved AI Overview rankings, significantly increasing quality leads for the project.</p>
-                        <a href="#contact" class="btn-discuss"><i class="fas fa-comments"></i> Discuss this Achievement</a>
-                    </div>
+                    <h3 class="section-title"><i class="fas fa-rocket"></i> Key Projects & Achievements</h3>
+                    
                     <div class="card">
-                        <h4>National Landscaping E-commerce Site</h4>
+                        <h4>Leading SaaS Platform<span class="country-tag">USA</span></h4>
+                        <p>Achieved AI Overview rankings, significantly increasing quality leads for the project.</p>
+                        <div class="card-actions">
+                            <a href="#contact" class="btn-discuss"><i class="fas fa-comments"></i> Discuss this Achievement</a>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <h4>National Landscaping E-commerce Site<span class="country-tag">USA</span></h4>
                         <ul>
                             <li>Successfully recovered organic traffic following a major website redesign and full migration.</li>
                             <li>Ranked in AI Overview by optimizing FAQs (AEO), creating an opportunity to upgrade their SEO package.</li>
                         </ul>
-                         <a href="#contact" class="btn-discuss"><i class="fas fa-comments"></i> Discuss this Achievement</a>
+                        <div class="card-actions">
+                            <a href="#contact" class="btn-discuss"><i class="fas fa-comments"></i> Discuss this Achievement</a>
+                        </div>
                     </div>
+                    
                     <div class="card">
-                        <h4>Rapid-Launch Templated Website</h4>
+                        <h4>Rapid-Launch Templated Website<span class="country-tag">INDIA</span></h4>
                         <ul>
                             <li>Executed an idea for a template-based site, scraping and structuring the entire database in a single day.</li>
                             <li>Developed and launched the full 8,000+ page website on day two, demonstrating rapid execution capabilities.</li>
                             <li>Successfully grew the site to over 100 daily visitors within its first month of operation.</li>
                         </ul>
-                         <a href="#contact" class="btn-discuss"><i class="fas fa-comments"></i> Discuss this Achievement</a>
+                        <div class="card-actions">
+                             <a href="#contact" class="btn-discuss"><i class="fas fa-comments"></i> Discuss this Achievement</a>
+                            <a href="#" class="btn-discuss btn-screenshot" data-img-src="/../Images/uts.png">
+                                <i class="fas fa-camera"></i> View Proof
+                            </a>
+                        </div>
                     </div>
+                    
                     <div class="card">
-                        <h4>Mabel</h4>
-                         <ul>
+                        <h4>High-Traffic Local Service Directory<span class="country-tag">DUBAI</span></h4>
+                        <ul>
                             <li>Recovered a hacked website, restoring over 6,000 salon listings and implementing comprehensive security measures.</li>
                             <li>Achieved a significant uptrend in organic rankings and secured AI Overview rankings.</li>
-                         </ul>
+                        </ul>
+                        <div class="card-actions">
+                            <a href="#contact" class="btn-discuss"><i class="fas fa-comments"></i> Discuss this Achievement</a>
+                        </div>
                     </div>
                 </section>
 
@@ -452,7 +564,12 @@
         </section>
 
     </div>
-
+<div id="imageModal" class="modal-overlay">
+    <span class="close-modal">&times;</span>
+    <div class="modal-content">
+        <img src="/../CV/Images/uts.png" alt="Project Screenshot" class="modal-image">
+    </div>
+</div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const sections = document.querySelectorAll('.section');
@@ -472,7 +589,58 @@
             });
         });
     </script>
+    <script>
+        // --- Modal Logic ---
+document.addEventListener('DOMContentLoaded', function() {
+    // Your existing IntersectionObserver code should stay here
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    sections.forEach(section => { observer.observe(section); });
+
+    // --- New code for the Image Modal ---
+    const modal = document.getElementById("imageModal");
+    const modalImg = modal.querySelector(".modal-image");
+    const openModalBtns = document.querySelectorAll(".btn-screenshot");
+    const closeModalBtn = document.querySelector(".close-modal");
+
+    // Function to open the modal
+    const openModal = (e) => {
+        e.preventDefault();
+        modal.style.display = "flex";
+        modalImg.src = e.currentTarget.dataset.imgSrc;
+    };
+    
+    // Function to close the modal
+    const closeModal = () => {
+        modal.style.display = "none";
+        modalImg.src = ""; // Clear src to stop loading
+    };
+
+    // Add event listeners
+    openModalBtns.forEach(btn => btn.addEventListener("click", openModal));
+    closeModalBtn.addEventListener("click", closeModal);
+
+    // Close modal if user clicks outside the image
+    modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape" && modal.style.display === "flex") {
+            closeModal();
+        }
+    });
+});
+    </script>
 </body>
 </html>
-
 
