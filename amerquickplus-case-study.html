@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Study: AmerQuickPlus SEO - Ajay Singh</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #121212;
+            --card-color: #1e1e1e;
+            --primary-text-color: #f0f0f0;
+            --secondary-text-color: #a0a0a0;
+            --accent-color: #00bfa5;
+            --accent-color-dark: #008c7a;
+            --shadow-color: rgba(0,0,0,0.5);
+            --gradient-accent: linear-gradient(45deg, var(--accent-color), #00d1b2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle, #2a2a2a 1px, transparent 1px);
+            background-size: 2rem 2rem;
+            color: var(--primary-text-color);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        .btn-secondary {
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        .btn-secondary:hover {
+            background-color: var(--accent-color);
+            color: #111;
+            transform: translateY(-5px);
+        }
+
+        .section {
+            background: var(--card-color);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid #2f2f2f;
+            box-shadow: 0 8px 16px var(--shadow-color);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary-text-color);
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            color: var(--primary-text-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #333;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        p, ul {
+            color: var(--secondary-text-color);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        ul {
+            list-style-position: outside;
+            padding-left: 1.5rem;
+        }
+        ul li { margin-bottom: 0.5rem; }
+        ul li::marker { color: var(--accent-color); }
+        
+        .date {
+            font-size: 0.9rem;
+            color: var(--secondary-text-color);
+            margin-bottom: 0.75rem;
+            font-style: italic;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .skill-tag {
+            background: #2c2c2c;
+            color: var(--primary-text-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border: 1px solid #444;
+            transition: all 0.3s ease;
+        }
+        .skill-tag:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+        }
+        
+        .card-actions {
+            margin-top: 1.25rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .btn-discuss {
+            display: inline-block;
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-discuss:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 191, 165, 0.3);
+        }
+        .btn-discuss i { margin-right: 0.5rem; }
+        .btn-screenshot {
+            border-color: #555;
+            color: #bbb;
+        }
+        .btn-screenshot:hover {
+            background-color: #555;
+            color: var(--primary-text-color);
+            box-shadow: 0 4px 10px rgba(85, 85, 85, 0.3);
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 85vw;
+            max-height: 85vh;
+            animation: zoomIn 0.4s ease-out;
+        }
+        .modal-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+        }
+        @keyframes zoomIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close-modal:hover,
+        .close-modal:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <a href="index.html" class="btn btn-secondary" style="margin-bottom: 2rem;">
+            <i class="fas fa-arrow-left"></i> Back to CV
+        </a>
+
+        <section class="section" style="opacity: 1; transform: none;">
+
+            <h1>Organic SEO Growth for AmerQuickPlus – UAE Visa & Immigration Services</h1>
+            <p class="date">
+                <strong>Client:</strong> AmerQuickPlus | 
+                <strong>Industry:</strong> Visa & Immigration Consultancy |
+                <strong>Project Date:</strong> January 2023 – June 2024
+            </p>
+            
+            <hr style="border: 0; height: 1px; background: #333; margin: 2rem 0;">
+
+            <h2><i class="fas fa-bullseye"></i>The Challenge</h2>
+            <p>When AmerQuickPlus, a UAE-based visa and immigration consultancy, first approached us, the website had no organic visibility, no content structure, and no lead flow. Despite offering trusted services for visa processing, outpass, and business setup in Dubai, the site struggled to reach its target audience.</p>
+            <p>Key issues identified included:</p>
+            <ul>
+                <li><strong>Zero Organic Presence:</strong> No keyword rankings, search visibility, or organic traffic.</li>
+                <li><strong>Content Deficit:</strong> The website lacked optimized content to attract or retain users.</li>
+                <li><strong>Technical SEO Problems:</strong> Crawlability and indexation errors were preventing search engines from properly ranking the site.</li>
+                <li><strong>Trust Signals Missing:</strong> No customer reviews or Google Business Profile activity to support credibility.</li>
+                <li><strong>Fact-Checking Barrier:</strong> Every service-related claim had to be verified against UAE government portals to maintain compliance and accuracy, slowing down content execution.</li>
+            </ul>
+
+            <h2><i class="fas fa-flag-checkered"></i>The Objective</h2>
+            <p>Our goal was clear — to establish AmerQuickPlus as a trusted name in UAE visa and immigration searches. Specific objectives included:</p>
+            <ul>
+                <li>Drive qualified traffic for visa, fine, outpass, and business setup-related queries.</li>
+                <li>Increase organic visibility and keyword rankings across UAE-focused searches.</li>
+                <li>Generate consistent inbound leads through organic channels.</li>
+                <li>Strengthen brand authority via local SEO and content credibility.</li>
+            </ul>
+
+            <h2><i class="fas fa-sitemap"></i>The SEO Strategy</h2>
+            <p>Our SEO campaign was structured in two major phases, combining technical excellence, content depth, and authority building.</p>
+            
+            <h3>Phase 1: On-Page Optimization & Content Expansion</h3>
+            <ul>
+                <li><strong>Content Strategy:</strong> Created informative, user-focused content for every service page and blog, covering topics like Emirates ID, Overstay Fine in UAE, Absconding Cases, Visa Fine Check, and Business Setup in Dubai.</li>
+                <li><strong>Featured Snippet Optimization:</strong> Structured content to rank in position zero for high-intent queries such as “How to check Emirates ID status” and “Overstay fine in UAE.”</li>
+                <li><strong>Technical SEO Fixes:</strong> Improved site speed, crawlability, schema, and internal linking.</li>
+                <li><strong>User Experience:</strong> Monitored with Microsoft Clarity and GA4 to enhance on-page behavior and reduce drop-offs.</li>
+            </ul>
+
+            <h3>Phase 2: Authority Building & Local SEO</h3>
+            <ul>
+                <li><strong>High-Quality Backlinks:</strong> Acquired backlinks from relevant immigration, travel, and UAE information platforms through contextual guest posts and forums.</li>
+                <li><strong>Reputation Building:</strong> Collected verified Google reviews from real office visitors to build credibility.</li>
+                <li><strong>Google My Business Optimization:</strong> Improved visibility for location-based searches and “near me” queries.</li>
+                <li><strong>Data-Driven Adjustments:</strong> Used GA4 and Search Console to refine strategies based on performance data and user journey analysis.</li>
+            </ul>
+
+            <h2><i class="fas fa-tools"></i>Tools Used</h2>
+            <div class="skills-grid">
+                <span class="skill-tag">Ahrefs</span>
+                <span class="skill-tag">Semrush</span>
+                <span class="skill-tag">Google Analytics 4 (GA4)</span>
+                <span class="skill-tag">Google Tag Manager (GTM)</span>
+                <span class="skill-tag">Google Search Console</span>
+                <span class="skill-tag">Microsoft Clarity</span>
+                <span class="skill-tag">Bing Webmaster</span>
+            </div>
+
+            <h2><i class="fas fa-chart-line"></i>The Results (Jan 2023 – Jun 2024)</h2>
+            <p>Our strategy produced significant organic growth across all key SEO metrics.</p>
+            <ul>
+                <li><strong>178K Total Clicks:</strong> From organic search.</li>
+                <li><strong>5.27 Million Impressions:</strong> Achieved in just 16 months.</li>
+                <li><strong>Average CTR:</strong> 3.4%</li>
+                <li><strong>Average Position:</strong> 27.1 (improving from 80+ at the start).</li>
+            </ul>
+            
+            <h3>Top 5 Ranking Keywords:</h3>
+            <ul>
+                <li>Emirates ID Status</li>
+                <li>Overstay Fine in UAE</li>
+                <li>Absconding in UAE</li>
+                <li>Visa Fine Check</li>
+                <li>How to Check Emirates ID Status Online</li>
+            </ul>
+            
+            <p>These rankings collectively drove a <strong>10x increase in organic leads</strong>, with form submissions, calls, and walk-in visits directly attributed to SEO-driven traffic.</p>
+
+            <div class="card-actions">
+                <a href="#" class="btn-discuss btn-screenshot" data-img-src="images/amergsc.png">
+                    <i class="fas fa-chart-line"></i> View GSC Performance
+                </a>
+                <a href="#" class="btn-discuss btn-screenshot" data-img-src="images/amerahrefs.png">
+                    <i class="fas fa-link"></i> View Keywords Growth
+                </a>
+                 <a href="#" class="btn-discuss btn-screenshot" data-img-src="images/amergmb.png">
+                    <i class="fas fa-map-marked-alt"></i> View Local SEO
+                </a>
+            </div>
+
+            <h2><i class="fas fa-check-circle"></i>Conclusion</h2>
+            <p>This case study demonstrates how a data-driven SEO strategy can transform an underperforming website into a high-performing lead generation engine. Through meticulous content optimization, technical clean-up, and authority building, AmerQuickPlus now dominates search results for UAE visa and immigration-related keywords.</p>
+            <p>AmerQuickPlus evolved from having no visibility to becoming a trusted digital brand — ranking on the first page for highly competitive search terms and continuously driving qualified organic leads.</p>
+
+            <hr style="border: 0; height: 1px; background: #333; margin: 2rem 0;">
+            <p style="font-size: 0.9rem; color: var(--muted); text-align: center;">
+                <a href="amerquickplus.pdf" target="_blank" style="color: var(--accent-color);">Download Full PDF Case Study</a>
+            </p>
+
+        </section>
+        </div>
+
+    <div id="imageModal" class="modal-overlay">
+        <span class="close-modal">&times;</span>
+        <div class="modal-content">
+            <img src="" alt="Project Screenshot" class="modal-image">
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById("imageModal");
+        if (modal) {
+            const modalImg = modal.querySelector(".modal-image");
+            const openModalBtns = document.querySelectorAll(".btn-screenshot");
+            const closeModalBtn = document.querySelector(".close-modal");
+
+            const openModal = (e) => {
+                e.preventDefault();
+                modal.style.display = "flex";
+                modalImg.src = e.currentTarget.dataset.imgSrc;
+            };
+            
+            const closeModal = () => {
+                modal.style.display = "none";
+                modalImg.src = "";
+            };
+
+            openModalBtns.forEach(btn => btn.addEventListener("click", openModal));
+            
+            if(closeModalBtn) {
+                closeModalBtn.addEventListener("click", closeModal);
+            }
+
+            modal.addEventListener("click", (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === "Escape" && modal.style.display === "flex") {
+                    closeModal();
+                }
+            });
+        }
+    });
+    </script>
+</body>
+</html>
